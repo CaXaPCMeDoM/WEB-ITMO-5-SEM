@@ -2,25 +2,39 @@
     --main-font: "GTEestiPro", arial, sans-serif;
 }
 
-body {
-    font-family: var(--main-font), sans-serif;
-    background-color: #f4f4f4;
-    margin: 0;
-    padding: 0;
-}
-
 header {
+    position: sticky;
     background-color: #333;
     color: white;
-    padding: 20px;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
 }
 
-header nav {
+.header-menu {
+    top: 0;
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 20px;
     width: 100%;
+}
+
+body {
+    font-family: var(--main-font), sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+}
+header, footer {
+    padding: 20px;
+    width: 100%;
+    box-sizing: border-box;
+}
+footer {
+    text-align: center;
+    color: white;
+    background-color: #333;
 }
 
 #logo {
@@ -73,7 +87,8 @@ header nav {
     display: flex;
     gap: 20px;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-between;
+    grid-template-columns: repeat(3, 1fr);
     padding: 10px;
 }
 
@@ -164,10 +179,60 @@ header nav {
     cursor: pointer;
 }
 
-footer {
-    padding: 10px;
-    width: 100%;
-    text-align: center;
-    color: white;
-    background-color: #333;
+
+@media (orientation: landscape) {
+
+}
+
+@media (orientation: portrait) {
+
+}
+
+
+@media screen and (max-width: 1000px) {
+    .product-list li {
+        flex: 1 1 calc(25% - 20px);
+    }
+}
+
+@media screen and (max-width: 740px) {
+    .product-list li {
+        flex: 1 1 calc(50% - 20px);
+    }
+    header nav {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .search-form-container {
+        order: 1;
+        width: 100%;
+    }
+
+    #logo {
+        order: 2;
+    }
+
+    #user-auth {
+        order: 3;
+    }
+}
+
+@media screen and (max-width: 378px) {
+    .product-list li {
+        flex: 1 1 calc(100%);
+    }
+    .logo_img {
+        width: 60px;
+    }
+
+    #user-auth img {
+        width: 30px;
+        height: 30px;
+    }
+
+    .search-form input {
+        font-size: 14px;
+    }
 }
