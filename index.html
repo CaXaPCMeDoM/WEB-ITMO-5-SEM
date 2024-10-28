@@ -11,24 +11,24 @@
 
 <header>
     <nav>
-        <div>
-            <!-- Логотип -->
-            <div id="logo">
-                <img>
-                <strong>Мой Сайт</strong>
-            </div>
+        <!-- Логотип -->
+        <div id="logo">
+            <img class="logo_img" src="logo.png" alt="Логотип пропал, но обещал вернуться">
+            <strong>Мой Сайт</strong>
+        </div>
 
-            <!-- Поисковая строка -->
-            <form id="search-form">
-                <input type="text" placeholder="Поиск...">
+        <!-- Поисковая строка -->
+        <div class="search-form-container">
+            <form class="search-form">
+                <input type="text" placeholder="Найди поставщика...">
             </form>
+        </div>
 
-            <!-- Иконка пользователя и авторизация -->
-            <div id="user-auth">
-                <a href="login.html">
-                    <img src="" alt="Иконка пользователя" loading="lazy">
-                </a>
-            </div>
+        <!-- Иконка пользователя и авторизация -->
+        <div id="user-auth">
+            <a href="login.html">
+                <img src="user.png" alt="Иконка пользователя" loading="lazy">
+            </a>
         </div>
     </nav>
 </header>
@@ -36,6 +36,96 @@
 <main>
     <section id="product_list" class="product-list">
         <ul>
+            <!-- Товар 1 -->
+            <li>
+                <div class="product-card">
+                    <a href="product-page-1.html" class="product-link">
+                        <img src="logo.png" alt="Товар 1" class="product-image">
+                        <p class="product-price">Цена: 1000 руб.</p>
+                        <h3 class="product-title">Товар 1</h3>
+                        <p class="product-description">Краткое описание товара 1</p>
+                    </a>
+                </div>
+            </li>
+
+            <!-- Товар 2 -->
+            <li>
+                <div class="product-card">
+                    <a href="product-page-2.html" class="product-link">
+                        <img src=".png" alt="Товар 2" class="product-image">
+                        <h3 class="product-title">Товар 2</h3>
+                        <p class="product-description">Краткое описание товара 2</p>
+                        <p class="product-price">Цена: 1500 руб.</p>
+                    </a>
+                </div>
+            </li>
+
+            <!-- Товар 1 -->
+            <li>
+                <div class="product-card">
+                    <a href="product-page-1.html" class="product-link">
+                        <img src=".png" alt="Товар 1" class="product-image">
+                        <h3 class="product-title">Товар 1</h3>
+                        <p class="product-description">Краткое описание товара 1</p>
+                        <p class="product-price">Цена: 1000 руб.</p>
+                    </a>
+                </div>
+            </li>
+            <!-- Товар 1 -->
+            <li>
+                <div class="product-card">
+                    <a href="product-page-1.html" class="product-link">
+                        <img src=".png" alt="Товар 1" class="product-image">
+                        <h3 class="product-title">Товар 1</h3>
+                        <p class="product-description">Краткое описание товара 1</p>
+                        <p class="product-price">Цена: 1000 руб.</p>
+                    </a>
+                </div>
+            </li>
+            <!-- Товар 1 -->
+            <li>
+                <div class="product-card">
+                    <a href="product-page-1.html" class="product-link">
+                        <img src=".png" alt="Товар 1" class="product-image">
+                        <h3 class="product-title">Товар 1</h3>
+                        <p class="product-description">Краткое описание товара 1</p>
+                        <p class="product-price">Цена: 1000 руб.</p>
+                    </a>
+                </div>
+            </li>
+            <!-- Товар 1 -->
+            <li>
+                <div class="product-card">
+                    <a href="product-page-1.html" class="product-link">
+                        <img src=".png" alt="Товар 1" class="product-image">
+                        <h3 class="product-title">Товар 1</h3>
+                        <p class="product-description">Краткое описание товара 1</p>
+                        <p class="product-price">Цена: 1000 руб.</p>
+                    </a>
+                </div>
+            </li>
+            <!-- Товар 1 -->
+            <li>
+                <div class="product-card">
+                    <a href="product-page-1.html" class="product-link">
+                        <img src=".png" alt="Товар 1" class="product-image">
+                        <h3 class="product-title">Товар 1</h3>
+                        <p class="product-description">Краткое описание товара 1</p>
+                        <p class="product-price">Цена: 1000 руб.</p>
+                    </a>
+                </div>
+            </li>
+            <!-- Товар 1 -->
+            <li>
+                <div class="product-card">
+                    <a href="product-page-1.html" class="product-link">
+                        <img src=".png" alt="Товар 1" class="product-image">
+                        <h3 class="product-title">Товар 1</h3>
+                        <p class="product-description">Краткое описание товара 1</p>
+                        <p class="product-price">Цена: 1000 руб.</p>
+                    </a>
+                </div>
+            </li>
             <!-- Товар 1 -->
             <li>
                 <div class="product-card">
@@ -74,13 +164,14 @@
         </ul>
     </section>
 
-    <aside>
-        <ul>
+    <aside class="dropdown-container">
+        <button class="dropdown-button">Категории</button>
+        <ul class="dropdown-content">
             <li>Тяжёлая промышленность</li>
             <li>Легкая промышленность</li>
             <li>Химическая промышленность</li>
             <li>Машиностроение</li>
-            <li>Электроэнрергетика</li>
+            <li>Электроэнергетика</li>
             <li>...</li>
         </ul>
     </aside>
