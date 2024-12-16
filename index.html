@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="style.css">
     <script src="index.js"></script>
     <script src="loadTime.js"></script>
+    <script src="dataLoader.js" defer></script>
 </head>
 <body>
 
@@ -35,10 +36,14 @@
             </form>
         </div>
 
+        <div class="cart">
+            <img src="delivery-truck_15944749.gif" alt="Корзина">
+        </div>
+
         <!-- Иконка пользователя и авторизация -->
         <div id="user-auth">
             <a href="#" id="auth-link">
-                <svg width="32" height="32" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+                <svg class="auth-svg" width="32" height="32" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
                     <circle cx="12" cy="8" r="4"/>
                     <path d="M12 14c-5 0-8 3-8 5v1h16v-1c0-2-3-5-8-5z"/>
                 </svg>
@@ -59,90 +64,14 @@
                         <h3 class="product-title">Банан</h3>
                         <p class="product-description">Свежий банан</p>
                     </a>
-                </div>
-            </li>
-            <!-- Товар 1 -->
-            <li>
-                <div class="product-card">
-                    <a href="product-page-1.html" class="product-link">
-                        <img src="product.png" alt="Товар 1" class="product-image">
-                        <p class="product-price">Цена: 160 руб.</p>
-                        <h3 class="product-title">Банан</h3>
-                        <p class="product-description">Свежий банан</p>
-                    </a>
-                </div>
-            </li>
-            <!-- Товар 1 -->
-            <li>
-                <div class="product-card">
-                    <a href="product-page-1.html" class="product-link">
-                        <img src="product.png" alt="Товар 1" class="product-image">
-                        <p class="product-price">Цена: 160 руб.</p>
-                        <h3 class="product-title">Банан</h3>
-                        <p class="product-description">Свежий банан</p>
-                    </a>
-                </div>
-            </li>
-            <!-- Товар 1 -->
-            <li>
-                <div class="product-card">
-                    <a href="product-page-1.html" class="product-link">
-                        <img src="product.png" alt="Товар 1" class="product-image">
-                        <p class="product-price">Цена: 160 руб.</p>
-                        <h3 class="product-title">Банан</h3>
-                        <p class="product-description">Свежий банан</p>
-                    </a>
-                </div>
-            </li>
-            <!-- Товар 1 -->
-            <li>
-                <div class="product-card">
-                    <a href="product-page-1.html" class="product-link">
-                        <img src="product.png" alt="Товар 1" class="product-image">
-                        <p class="product-price">Цена: 160 руб.</p>
-                        <h3 class="product-title">Банан</h3>
-                        <p class="product-description">Свежий банан</p>
-                    </a>
-                </div>
-            </li>
-            <!-- Товар 1 -->
-            <li>
-                <div class="product-card">
-                    <a href="product-page-1.html" class="product-link">
-                        <img src="product.png" alt="Товар 1" class="product-image">
-                        <p class="product-price">Цена: 160 руб.</p>
-                        <h3 class="product-title">Банан</h3>
-                        <p class="product-description">Свежий банан</p>
-                    </a>
-                </div>
-            </li>
-            <!-- Товар 1 -->
-            <li>
-                <div class="product-card">
-                    <a href="product-page-1.html" class="product-link">
-                        <img src="product.png" alt="Товар 1" class="product-image">
-                        <p class="product-price">Цена: 160 руб.</p>
-                        <h3 class="product-title">Банан</h3>
-                        <p class="product-description">Свежий банан</p>
-                    </a>
-                </div>
-            </li>
-            <!-- Товар 1 -->
-            <li>
-                <div class="product-card">
-                    <a href="product-page-1.html" class="product-link">
-                        <img src="product.png" alt="Товар 1" class="product-image">
-                        <p class="product-price">Цена: 160 руб.</p>
-                        <h3 class="product-title">Банан</h3>
-                        <p class="product-description">Свежий банан</p>
-                    </a>
+                    <button class="add-to-cart-btn" data-title="Банан" data-price="160">Добавить в корзину</button>
                 </div>
             </li>
         </ul>
     </section>
 
     <aside id="dropdown" class="dropdown-container">
-        <ul class="dropdown-content">
+        <ul class="catalog-dropdown">
             <li>Тяжёлая промышленность</li>
             <li>Легкая промышленность</li>
             <li>Химическая промышленность</li>
@@ -152,7 +81,7 @@
         </ul>
     </aside>
 
-    <aside id="auth_dropdown" class="auth-dropdown hidden">
+    <aside id="options_dropdown" class="option_dropdown hidden">
         <ol>
             <li>Мой профиль</li>
             <li>Заказы</li>
@@ -160,8 +89,13 @@
         </ol>
     </aside>
 </main>
-
+<div id="cart-menu" class="cart-dropdown hidden">
+    <h3>Корзина</h3>
+    <ul id="cart-list"></ul>
+    <p id="cart-total"></p>
+</div>
 <footer>
+    <iframe src="https://vk.com/video_ext.php?oid=282441555&id=456239500&hash=f94a3c0516f8bcc9" width="640" height="360" frameborder="0" allowfullscreen="allowfullscreen" allow="autoplay; encrypted-media; fullscreen; picture-in-picture"></iframe>
     <p id="copyright">&copy; 2024 KIKI. Все права защищены.</p>
 </footer>
 
