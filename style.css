@@ -94,6 +94,18 @@ header {
     margin-right: 20px;
 }
 
+.cart {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 50px;
+}
+
+.cart img {
+    height: 80px;
+    width: 80px;
+}
+
 #user-auth {
     display: flex;
     align-items: center;
@@ -101,10 +113,11 @@ header {
     margin-right: 20px;
 }
 
-.auth-dropdown {
+.option_dropdown {
     position: absolute;
-    top: 60px;
-    right: 20px;
+    z-index: 300;
+    top: 8vh;
+    right: 3vw;
     background-color: var(--header-footer-bg);
     border: 1px solid var(--border-color);
     border-radius: 8px;
@@ -113,23 +126,23 @@ header {
     display: none;
 }
 
-.auth-dropdown.hidden {
+.option_dropdown.hidden {
     display: none;
 }
 
-.auth-dropdown ol {
+.option_dropdown ol {
     list-style: none;
     padding: 10px;
     margin: 0;
 }
 
-.auth-dropdown ol li {
+.option_dropdown ol li {
     padding: 10px;
     cursor: pointer;
     transition: background-color 0.3s;
 }
 
-.auth-dropdown ol li:hover {
+.option_dropdown ol li:hover {
     background-color: var(--secondary-color);
 }
 
@@ -230,18 +243,18 @@ a {
     width: 200px;
 }
 
-.dropdown-content {
+.catalog-dropdown {
     list-style: none;
     padding: 10px;
     margin: 0;
 }
 
-.dropdown-content li {
+.catalog-dropdown li {
     padding: 8px 10px;
     cursor: pointer;
 }
 
-.dropdown-content li:hover {
+.catalog-dropdown li:hover {
     background-color: #f0f0f0;
 }
 
@@ -263,6 +276,54 @@ a {
     background-color: #1558c0;
 }
 
+.cart-dropdown {
+    position: absolute;
+    top: 100px; /* Позиция под иконкой корзины */
+    right: 20px;
+    background-color: var(--header-footer-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    display: none; /* Скрыто по умолчанию */
+    z-index: 300;
+    padding: 15px;
+}
+
+.cart-dropdown.hidden {
+    display: block;
+}
+
+.cart-dropdown h3 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    color: var(--text-color);
+}
+
+.cart-dropdown ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.cart-dropdown ul li {
+    padding: 8px 0;
+    border-bottom: 1px solid var(--border-color);
+    font-size: 1em;
+    color: var(--text-color);
+}
+
+.cart-dropdown ul li:last-child {
+    border-bottom: none;
+}
+
+#cart-total {
+    font-weight: bold;
+    margin-top: 10px;
+    color: var(--primary-color);
+}
+
+
 @media screen and (max-width: 740px) {
     .header-menu {
         flex-direction: column;
@@ -276,6 +337,9 @@ a {
 
     .search-button {
         display: flex;
+    }
+    .cart {
+        margin-right: 10px;
     }
 }
 
