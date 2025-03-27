@@ -29,6 +29,3 @@ document.addEventListener("DOMContentLoaded", () => {
         dropdown.style.display = isVisible ? "none" : "block";
     }
 });
-
-
-

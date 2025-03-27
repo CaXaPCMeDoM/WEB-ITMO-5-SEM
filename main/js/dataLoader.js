@@ -1,3 +1,5 @@
+let cartItems = [];
+
 document.addEventListener('DOMContentLoaded', () => {
     const productList = document.getElementById('product_list');
     const preloader = document.createElement('div');
@@ -5,7 +7,6 @@ document.addEventListener('DOMContentLoaded', () => {
     preloader.innerHTML = '<div class="loader"></div>';
     productList.appendChild(preloader);
 
-    const cartItems = [];
     const cartMenu = document.getElementById("cart-menu");
     const cartList = document.getElementById("cart-list");
     const cartTotal = document.getElementById("cart-total");

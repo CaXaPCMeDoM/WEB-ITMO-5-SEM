@@ -28,16 +28,6 @@ header {
     justify-content: space-between;
 }
 
-/*
-.header-menu > div {
-    flex: 1 0 0;
-}
-
-.header-menu > div:nth-child(2) {
-    display: flex;
-    justify-content: center;
-}
-*/
 .search-form-container {
     flex-grow: 1;
     display: flex;
