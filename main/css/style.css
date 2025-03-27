@@ -7,6 +7,8 @@
     --border-color: #e0e0e0;
     --link-color: inherit;
     --link-decoration: none;
+
+    --header-height: 100px;
 }
 
 header {
@@ -194,6 +196,8 @@ a {
 }
 
 .product-card {
+    display: flex;
+    flex-direction: column;
     background-color: var(--secondary-color);
     border: 1px solid var(--border-color);
     border-radius: 12px;
@@ -277,20 +281,26 @@ a {
 }
 
 .cart-dropdown {
-    position: absolute;
-    top: 100px; /* Позиция под иконкой корзины */
+    position: fixed;
+    top: calc(var(--header-height) + 20px);
     right: 20px;
     background-color: var(--header-footer-bg);
     border: 1px solid var(--border-color);
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     width: 300px;
-    display: none; /* Скрыто по умолчанию */
+    display: none;
     z-index: 300;
     padding: 15px;
+    max-height: 70vh;
+    overflow-y: auto;
 }
 
-.cart-dropdown.hidden {
+.cart-dropdown:not(.hidden) {
+    display: block;
+}
+
+.cart-dropdown.visible {
     display: block;
 }
 
@@ -323,6 +333,64 @@ a {
     color: var(--primary-color);
 }
 
+.add-to-cart-btn {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.add-to-cart-btn:hover {
+    background-color: #1557bf;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.add-to-cart-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+.add-to-cart-btn::before {
+    content: '';
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white"><path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49c.08-.14.12-.31.12-.48 0-.55-.45-1-1-1H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: transform 0.3s ease;
+}
+
+/* Анимация при клике */
+.add-to-cart-btn:active::before {
+    transform: scale(0.9);
+}
+
+/* Адаптив для мобилок */
+@media (max-width: 768px) {
+    .add-to-cart-btn {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+
+    .add-to-cart-btn::before {
+        width: 18px;
+        height: 18px;
+    }
+}
 
 @media screen and (max-width: 740px) {
     .header-menu {

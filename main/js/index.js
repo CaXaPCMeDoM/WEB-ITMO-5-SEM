@@ -12,4 +12,13 @@ document.addEventListener("DOMContentLoaded", () => {
             dropdown.style.display = "none";
         }
     });
+    // Закрытие корзины при клике вне
+    document.addEventListener("click", (event) => {
+        const cartMenu = document.getElementById("cart-menu");
+        const cartIcon = document.querySelector(".cart");
+
+        if (!cartMenu.contains(event.target) && !cartIcon.contains(event.target)) {
+            cartMenu.classList.add("hidden");
+        }
+    });
 });
